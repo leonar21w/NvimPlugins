@@ -1,14 +1,3 @@
--- Transparent backgrounds
-vim.cmd [[
-  highlight Normal guibg=NONE
- highlight NormalNC guibg=NONE
-  highlight NormalFloat guibg=NONE
-  highlight FloatBorder guibg=NONE
-  highlight SignColumn guibg=NONE
-  highlight VertSplit guibg=NONE
-  highlight WinSeparator guifg=#555566 guibg=NONE
-]]
-
 -- Split characters (borders between windows)
 vim.opt.fillchars:append({
     vert = "│",
