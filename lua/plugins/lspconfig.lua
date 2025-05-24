@@ -7,11 +7,11 @@ return {
             "hrsh7th/cmp-nvim-lsp",
         },
         config = function()
-            local lspconfig                          = require("lspconfig")
-            local cmp                                = require("cmp")
-            local cmp_lsp                            = require("cmp_nvim_lsp")
+            local lspconfig = require("lspconfig")
+            local cmp       = require("cmp")
+            local cmp_lsp   = require("cmp_nvim_lsp")
 
-            vim.highlight.priorities.semantic_tokens = 0
+            --      vim.highlight.priorities.semantic_tokens = 0
             -- nvim-cmp setup
             cmp.setup({
                 mapping = cmp.mapping.preset.insert({
@@ -69,25 +69,6 @@ return {
             lspconfig.html.setup({ on_attach = on_attach, capabilities = capabilities })
             lspconfig.cssls.setup({ on_attach = on_attach, capabilities = capabilities })
             lspconfig.jsonls.setup({ on_attach = on_attach, capabilities = capabilities })
-
-            -- Swift / Objective-C
-            lspconfig.sourcekit.setup({
-                cmd = { "xcrun", "sourcekit-lsp" },
-                filetypes = { "swift", "objective-c", "objc", "objcpp" },
-                on_attach = function(client, bufnr)
-                    on_attach(client, bufnr)
-                end,
-                capabilities = capabilities,
-                root_dir = lspconfig.util.root_pattern(
-                    "Package.swift", "*.xcworkspace", "*.xcodeproj", ".git"
-                ),
-                init_options = {
-                    ["sourcekit-lsp"] = {
-                        completeBuildTargets = true,
-                        enableIndexing       = true,
-                    },
-                },
-            })
         end,
     },
 }
