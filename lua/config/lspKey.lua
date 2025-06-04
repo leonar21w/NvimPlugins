@@ -10,10 +10,6 @@ map("n", "<leader>ds", vim.diagnostic.open_float, { desc = "Show Diagnostics" })
 map("n", "[d", vim.diagnostic.goto_prev, { desc = "Prev Diagnostic" })
 map("n", "]d", vim.diagnostic.goto_next, { desc = "Next Diagnostic" })
 
-
--- yank into the + register in normal & visual modes
-vim.keymap.set({ 'n', 'v' }, 'y', '"+y', { noremap = true, silent = true })
-
 -- paste from the + register in normal mode
 vim.keymap.set('n', 'p', '"+p', { noremap = true, silent = true })
 vim.keymap.set('n', 'P', '"+P', { noremap = true, silent = true })

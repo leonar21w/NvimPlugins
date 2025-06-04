@@ -15,6 +15,7 @@ return {
                 json = { "prettier" },
                 html = { "prettier" },
                 css = { "prettier" },
+                swift = { "swift-format" }
             },
             format_on_save = function(bufnr)
                 -- Disable autoformat for certain filetypes or conditions if needed

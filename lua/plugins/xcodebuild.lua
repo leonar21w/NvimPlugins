@@ -24,9 +24,10 @@ return {
         "folke/snacks.nvim",             -- SwiftUI/AppKit previews
     },
     config = function()
-        local lspconfig = require("lspconfig")
-        local util      = lspconfig.util
+        local lspconfig                          = require("lspconfig")
+        local util                               = lspconfig.util
 
+        vim.highlight.priorities.semantic_tokens = 0
         -- 1) SourceKit-LSP: Xcode’s settings + fast indexing
         lspconfig.sourcekit.setup({
             cmd          = { "xcrun", "sourcekit-lsp" },

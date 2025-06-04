@@ -18,7 +18,14 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                     ["<CR>"]      = cmp.mapping.confirm({ select = true }),
                 }),
-                sources = { { name = "nvim_lsp" } },
+                sources = { { name = "nvim_lsp" }, { name = "tailwindcss-colorizer-cmp" } },
+
+                formatting = {
+                    format = function(entry, vim_item)
+                        vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
+                        return vim_item
+                    end,
+                }
             })
 
 
