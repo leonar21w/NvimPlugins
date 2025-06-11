@@ -34,8 +34,8 @@ return {
             filetypes    = { "swift", "m", "mm" },
             root_dir     = util.root_pattern( -- auto-find your project root
                 "Package.swift",
-                "*.xcworkspace",
-                "*.xcodeproj",
+                ".xcworkspace",
+                ".xcodeproj",
                 ".git"
             ),
             init_options = {
